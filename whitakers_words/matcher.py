@@ -12,6 +12,8 @@ class Matcher:
         if infl["pos"] != stem["pos"]:
             if infl["pos"] == "VPAR" and stem["pos"] == "V":
                 self.function = _vpar_checker
+            elif infl["pos"] == "N" and stem["pos"] == "PRON":
+                self.function = _pronoun_checker
             else:
                 self.function = _dummy_false
         elif stem["pos"] == "N":
